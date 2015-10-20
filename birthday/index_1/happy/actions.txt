@@ -1,0 +1,4 @@
+getURL("http://cars.163.com","_self");
+stop();
+stopAllSounds();
+gotoAndPlay(5);

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>if you well is sunny</title>
+
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/mobilyblocks.js"></script>
+<script type="text/javascript" src="js/1.js"></script> 
+<script type="text/javascript" src="js/2.js"></script> 
+
+<script type="text/javascript" src="js/swfobject.js"></script> 
+<script type="text/javascript" src="js/1bit.js"></script> 
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;text-decoration: none;}
+a{color: black;font-family: 华文行楷;}
+body{font-family:Arial, Helvetica, sans-serif;background:#447FBB;}
+/* comp */
+div.comp{background:url(images/fozu41.png) no-repeat center center;width:200px;height:200px;display:block;cursor:pointer;position:relative;margin:230px auto 0 auto;}
+div.comp ul.reset li{position:absolute;}
+</style>
+
+<script type="text/javascript">
+oneBit = new OneBit('js/1bit.swf'); 
+oneBit.ready(function() { 
+oneBit.specify('color', '#E02724'); 
+oneBit.specify('background', '#1C261E'); 
+oneBit.specify('playerSize', '50'); 
+oneBit.specify('position', 'after'); 
+oneBit.specify('analytics', true); 
+oneBit.apply('a'); 
+}); 
+
+$(function(){
+	$('.comp').mobilyblocks({
+		trigger:'click',
+		direction:'counter',
+		duration:500,
+		zIndex:50,
+		widthMultiplier:1.1
+	});
+	
+	
+});
+
+function playOrPaused(id,obj){
+	
+	audio = document.getElementById(id);
+	if(audio.paused){
+		audio.play();
+		obj.innerHTML='暂停';
+		return;
+	}
+	audio.pause();
+	obj.innerHTML='播放背景音乐';
+}
+function load(id){
+	audio = document.getElementById(id);
+$("#bgmMusic1Html").html("暂停");
+	audio.load();
+	audio.play();
+}
+
+</script>
+<script type="text/javascrpt" language="javascript"> 
+//方法一 
+function noMenuOne() 
+{ 
+alert('禁止右键菜单!'); 
+return false; 
+} 
+document.oncontextmenu = noMenuOne; 
+//方法二 
+function noMenuTwo() 
+{ 
+if(event.button == 2) 
+{ 
+alert('禁止右键菜单!'); 
+return false; 
+} 
+} 
+document.onmousedown = noMenuTwo(); 
+</script> 
+</head>
+
+<body>
+<noscript><iframe src='*.htm'></iframe></noscript> 
+<div class="comp" title="点击我试试" style="display: block;margin-left: 345px;">
+	<ul class="reset" style="display: block; z-index: 50; opacity:0;">
+		
+		<li><a href="###"><img src="images/img1.png" alt="" /></a></li>
+		<li><a href="http://www.youwellissunny.com/qingshu/qingshu.html" title="程序员的情书" target="_blank"><img src="images/img2.png" alt="程序员的情书" /></a></li>
+		<li><a href="http://www.youwellissunny.com/wish/zhufu2" title="爱情树" target="_blank"><img src="images/img3.png" alt="" /></a></li>
+		<li><a href="http://www.youwellissunny.com/birthday/index.htm" title="生日快乐" target="_blank"><img src="images/dangao1.png" alt="生日快乐" /></a></li>
+		<li><a href="http://www.youwellissunny.com/wish/zhufu" title="程序员的浪漫" target="_blank"><img src="images/img4.png" alt="" /></a></li>
+		<li><a href="http://www.youwellissunny.com/xinnian2" title="新年快乐" target="_blank"><img src="images/img5.png" alt="" /></a></li>
+		<li><a href="###"><img src="images/img6.png" alt="" /></a></li>
+	</ul>
+</div>
+<!--
+	作者：chenyuguxing@163.com
+	时间：2015-06-05
+	描述：
+-->
+<audio id="bgmMusic1" src="mp3/2.mp3" preload="auto" type="audio/mp3"  loop="loop"></audio>
+<!--
+<audio id="bgmMusic2" src="mp3/yujian.mp3" preload="auto" type="audio/mp3"  loop="loop"></audio>
+-->
+<div  style="text-align:center;margin:-170px 0;margin-left: 400px; font:normal 14px/24px 'MicroSoft YaHei';" >
+<p style="font-size:24px;font-weight:bold;color=red;margin-bottom: 20px;" ><font face="华文行楷">点击图片试试</font></p>
+<p style="font-size: 30px;font-style: normal;color: #000000;" >
+	<font face="微软雅黑" color="purple">
+			take me to you heart
+	</font>
+		<br /><br />
+		<a href="javascript:void(0);" onclick="playOrPaused('bgmMusic1',this)"
+			style="text-decoration: none;color: black;font-family: 华文行楷;"
+			id="bgmMusic1Html"
+		>
+			播放背景音乐
+		</a>
+		/
+		<a href="javascript:void(0);" onclick="load('bgmMusic1')"
+			style="text-decoration: none;color: black;font-family: 华文行楷;"
+		>
+			重新播放
+		</a>
+		<!--
+        	作者：chenyuguxing@163.com
+        	时间：2015-06-05
+        	描述：
+        
+		<a href="mp3/2.mp3" id="aPlayer"></a>
+		
+		-->
+</p>
+</div>
+</body>
+</html>
